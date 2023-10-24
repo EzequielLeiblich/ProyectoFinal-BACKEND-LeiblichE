@@ -33,5 +33,7 @@ export default {
   URL_REST_PASS: process.env.URL_REST_PASS,
   STRIPE_KEY_PUBLIC: process.env.STRIPE_KEY_PUBLIC,
   STRIPE_KEY_SECRET: process.env.STRIPE_KEY_SECRET,
-  PURCHASE_ORDER: process.env.PURCHASE_ORDER
+  PURCHASE_ORDER: process.env.PURCHASE_ORDER,
+  SUCCESS_URL: process.env.SUCCESS_URL,
+  CANCEL_URL: process.env.CANCEL_URL
 }

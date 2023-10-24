@@ -25,8 +25,8 @@ export default class PaymentsService {
                     uid: uid,
                     email: email
                 },
-                success_url: 'http://localhost:8080/paySuccess',
-                cancel_url: 'http://localhost:8080/cart',
+                success_url: `${config.SUCCESS_URL}`,
+                cancel_url: `${config.CANCEL_URL}`,
             })
             if (paymentIntent.url) {
                 response.statusCode = 200;

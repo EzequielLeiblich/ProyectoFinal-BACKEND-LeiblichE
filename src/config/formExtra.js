@@ -59,15 +59,16 @@ export const completeProfile = async (req, res, next) => {
                 age,
                 password
             };
-            const updateSessionControl = await sessionController.updateUserController(req, res, next, userId, updateUser);
-            if (updateSessionControl.statusCode === 200) {
-                const userExtraForm = updateSessionControl.result;
+            await sessionController.updateUserController(req, res, next, userId, updateUser);
+            const getNewUser = await sessionController.getUserController(req, res, email);
+            if (getNewUser.statusCode === 200) {
+                const newUser = getNewUser.result;
                 let token = jwt.sign({
-                    email: userExtraForm.email,
-                    first_name: userExtraForm.first_name,
-                    role: userExtraForm.role,
-                    cart: userExtraForm.cart,
-                    userID: userExtraForm._id
+                    email: newUser.email,
+                    first_name: newUser.first_name,
+                    role: newUser.role,
+                    cart: newUser.cart,
+                    userID: newUser._id
                 }, config.JWT_SECRET, {
                     expiresIn: '7d'
                 });
