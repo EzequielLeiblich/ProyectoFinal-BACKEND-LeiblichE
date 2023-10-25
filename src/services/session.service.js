@@ -102,7 +102,7 @@ export default class SessionService {
                         <h2 style="font-size: 24px; margin: 0;">Enlace para restablecimiento de contraseña:</h2>
                             <p style="font-size: 16px;">
                             Haga click en el siguiente enlace para restablecer su contraseña:</p>
-                            <a href="${config.URL_REST_PASS}${token}" 
+                            <a href="https://proyectofinal-backend-leibliche-preproduction.up.railway.app/resetPasswordView?token=${token}" 
                             style="
                             background-color: #95d0f7;
                             color: #002877; 

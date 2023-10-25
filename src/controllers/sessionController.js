@@ -1,5 +1,6 @@
 import SessionService from "../services/session.service.js";
 import mongoose from 'mongoose';
+import __dirname from "../utils.js";
 import config from "../config.js";
 
 import ErrorEnums from "../errors/error.enums.js";

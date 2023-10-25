@@ -99,7 +99,8 @@ async function loadProducts(resultCart) {
   resultCart.products.forEach((product) => {
     let title = product.product.title;
     let stock = product.product.stock
-    let img = product.product.img1.reference
+    let img1Path = product.product.img1.reference;
+    let img1PathAfterImgs = img1Path.substring(img1Path.indexOf("/imgs"));
     let price = product.product.price;
     let quantityInCart = product.quantity;
     let pidInCart = product._id;
@@ -108,7 +109,7 @@ async function loadProducts(resultCart) {
     const productRow = `
       <tr>
         <td>${title}</td>
-        <td><img src="${img}" alt="${title}" class="Imgs"></td>
+        <td><img src="${img1PathAfterImgs}" alt="${title}" class="Imgs"></td>
         <td>${stock}</td>
         <td>
           <input type="number" class="input-quantity" quantity-product-id="${pidInCart}" value="${quantityInCart}" data-product-title="${title}" min="1" max="${stock}">

@@ -11,7 +11,7 @@ export const initializePassportGitHub = (req, res, next) => {
     passport.use('github', new GitHubStrategy({
         clientID: config.GITHUB_CLIENT_ID,
         clientSecret: config.GITHUB_CLIENT_SECRET,
-        callbackURL: config.GITHUB_CALLBACK_URL,
+        callbackURL: "https://proyectofinal-backend-leibliche-preproduction.up.railway.app/api/sessions/githubcallback",
     }, async (accessToken, refreshToken, profile, done) => {
         try {
             const session = profile._json.name;

@@ -25,8 +25,8 @@ export default class PaymentsService {
                     uid: uid,
                     email: email
                 },
-                success_url: `${config.SUCCESS_URL}`,
-                cancel_url: `${config.CANCEL_URL}`,
+                success_url: 'https://proyectofinal-backend-leibliche-preproduction.up.railway.app/paySuccess',
+                cancel_url: 'https://proyectofinal-backend-leibliche-preproduction.up.railway.app/cart',
             })
             if (paymentIntent.url) {
                 response.statusCode = 200;
