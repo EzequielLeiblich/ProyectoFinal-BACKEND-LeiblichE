@@ -99,6 +99,16 @@ async function cargarDocuments() {
             try {
                 let uid = sessionRes.userId;
                 const formDocs = new FormData(form);
+                const identification = document.querySelector('input[name="identification"]');
+                const proofOfAddress = document.querySelector('input[name="proofOfAddress"]');
+                const bankStatement = document.querySelector('input[name="bankStatement"]');
+                for (const fileInput of [identification, proofOfAddress, bankStatement]) {
+                    if (fileInput.files.length > 0) {
+                        for (const file of fileInput.files) {
+                            formDocs.append(fileInput.name, file);
+                        }
+                    }
+                }
                 const uploadDocsRes = await fetch(`/api/users/${uid}/documents`, {
                     method: 'POST',
                     body: formDocs
