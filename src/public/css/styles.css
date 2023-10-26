@@ -114,6 +114,8 @@ tbody {
 }
 
 .logoS{
+  max-width: 8vh;
+  cursor: pointer;
   margin-left: 2em !important;
 }
 
