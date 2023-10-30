@@ -45,8 +45,8 @@ p {
 }
 
 .table {
-  width: 100%;
-  margin-top: 30px;
+  display: table;
+  margin: auto;
 }
 
 .table th {
@@ -224,7 +224,6 @@ input {
   font-size: 1.1em;
   color: #95d0f7;
   background-color: #ffffff;
-  width: auto;
   padding: 0.4em;
   border-radius: 1em;
   border: 0.15em solid #95d0f7;
@@ -243,7 +242,6 @@ input {
 
 .botonEnv {
   padding: 0.6em;
-  width: 40%;
   margin-left: 10%;
 }
 
